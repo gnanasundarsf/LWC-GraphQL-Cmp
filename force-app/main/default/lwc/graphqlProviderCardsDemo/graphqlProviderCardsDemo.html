@@ -1,0 +1,35 @@
+<template>
+  <lightning-card
+    title="Accounts from Reusable GraphQL JS API"
+    icon-name="standard:account"
+  >
+    <div class="slds-var-p-horizontal_medium slds-var-p-bottom_medium">
+      <template lwc:if={loading}>
+        <lightning-spinner
+          alternative-text="Loading account cards"
+          size="small"
+        ></lightning-spinner>
+      </template>
+
+      <template lwc:if={hasErrors}>
+        <div class="error-panel" role="alert">{errorMessage}</div>
+      </template>
+
+      <template lwc:if={hasRecords}>
+        <div class="card-grid">
+          <template for:each={accountCards} for:item="account">
+            <article class="account-card" key={account.Id}>
+              <h3>{account.Name}</h3>
+              <p>{account.Industry}</p>
+              <lightning-formatted-number
+                value={account.AnnualRevenue}
+                format-style="currency"
+                currency-code="USD"
+              ></lightning-formatted-number>
+            </article>
+          </template>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>
