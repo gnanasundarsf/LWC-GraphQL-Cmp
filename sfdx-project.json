@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "LearnAgentForce",
+  "namespace": "",
+  "sfdcLoginUrl": "https://orgfarm-a4aaf3904d-dev-ed.develop.lightning.force.com/",
+  "sourceApiVersion": "67.0"
+}
